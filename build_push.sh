@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for var in cpu cpu-noopt cpu-cv cpu-noopt-cv cpu-lib cpu-noopt-lib cpu-cv-lib cpu-noopt-cv-lib
+for var in cpu-cv-lib cpu-cv
 do
   DOCKER_REPO="gmontamat/darknet"
   SOURCE_BRANCH="master"
