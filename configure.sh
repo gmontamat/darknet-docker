@@ -4,7 +4,7 @@ tag="${1}"
 makefile="Makefile"
 
 function enable_lib() {
-  echo "enable lib"
+  echo "enable LIBSO flag"
   sed -i -e 's/LIBSO=0/LIBSO=1/g' $makefile
 }
 
