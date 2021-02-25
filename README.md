@@ -11,6 +11,7 @@ Tags means options in the Makefile when darknet binary was built. You can check 
 * ``cpu`` tag means images are built with `AVX=1` and `OPENMP=1`.
     - ``noopt`` tag means disabling AVX option ``AVX=0``. If you use cpu based image and get error, try this tag.
 * ``cv`` tag means images are built with `OPENCV=1`
+* ``lib`` tag means images are built with `LIBSO=1`
 * ``gpu`` tag means images are built with ``GPU=1`` and ``CUDNN=1``
     - ``cc**`` tag means compute compability of GPU. Images with this tag are optimized for GPU architecture. You can check compute compability of your GPU [here](https://developer.nvidia.com/cuda-gpus "CUDA GPUs"). If compute compability is greater than or equal to 7.0, images are built with ``CUDNN_HALF=1``.
 

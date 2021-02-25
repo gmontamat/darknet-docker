@@ -3,6 +3,11 @@
 tag="${1}"
 makefile="Makefile"
 
+function enable_lib() {
+  echo "enable lib"
+  sed -i -e 's/LIBSO=0/LIBSO=1/g' $makefile
+}
+
 function enable_gpu() {
   echo "enable GPU flag"
   sed -i -e 's/GPU=0/GPU=1/g' $makefile
@@ -67,6 +72,26 @@ case ${tag} in
     enable_openmp
     ;;
   "cpu-noopt-cv")
+    enable_opencv
+    enable_openmp
+    ;;
+  "cpu-lib")
+    enable_lib
+    enable_avx
+    enable_openmp
+    ;;
+  "cpu-noopt-lib")
+    enable_lib
+    enable_openmp
+    ;;
+  "cpu-cv-lib")
+    enable_lib
+    enable_opencv
+    enable_avx
+    enable_openmp
+    ;;
+  "cpu-noopt-cv-lib")
+    enable_lib
     enable_opencv
     enable_openmp
     ;;
