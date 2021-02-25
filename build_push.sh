@@ -15,7 +15,7 @@ do
   echo $VAR
 
 if [[ "$DOCKER_TAG" == *cv* ]]; then
-  if [[ "$DOCKER_TAG" = *cpu-cv || "$DOCKER_TAG" = *cpu-noopt-cv ]]; then
+  if [[ "$DOCKER_TAG" = *cpu-cv* || "$DOCKER_TAG" = *cpu-noopt-cv* ]]; then
     echo "building cpu-cv or cpu-noopt-cv"
     docker build \
       --build-arg CONFIG=$VAR \
@@ -31,7 +31,7 @@ if [[ "$DOCKER_TAG" == *cv* ]]; then
       -t $DOCKER_REPO:$DOCKER_TAG -f Dockerfile.gpu-cv .
   fi
  else
-  if [[ "$DOCKER_TAG" = *cpu || "$DOCKER_TAG" = *cpu-noopt ]]; then
+  if [[ "$DOCKER_TAG" = *cpu* || "$DOCKER_TAG" = *cpu-noopt* ]]; then
     echo "building cpu or cpu-noopt"
     docker build \
       --build-arg CONFIG=$VAR \
